@@ -23,9 +23,6 @@ const io = new Server(server, {
 const users = new Map();
 const drawingHistory = [];
 
-app.get('/',(req,res)=>{
-  res.send('Server is running');
-})
 
 io.on('connection', (socket) => {
   console.log('New client connected');
