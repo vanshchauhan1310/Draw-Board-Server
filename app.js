@@ -8,13 +8,13 @@ const server = createServer(app);
 
 // Configure CORS
 app.use(cors({
-  origin: 'http://localhost:3000', // Your React app's URL
+  origin: 'https://draw-board-client.vercel.app/', // Your React app's URL
   methods: ['GET', 'POST']
 }));
 
 const io = new Server(server, {
   cors: {
-    origin: 'http://localhost:3000',
+    origin: 'https://draw-board-client.vercel.app/',
     methods: ['GET', 'POST']
   }
 });
