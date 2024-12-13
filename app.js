@@ -13,10 +13,13 @@ app.use(cors({
 }));
 
 const io = new Server(server, {
-  cors: {
-    origin: 'https://draw-board-client.vercel.app/',
-    methods: ['GET', 'POST']
-  }
+    cors: {
+      origin: "https://draw-board-client.vercel.app",
+      methods: ["GET", "POST"],
+      allowedHeaders: ["my-custom-header"],
+      credentials: true
+    },
+    transports: ['websocket', 'polling']
 });
 
 // Store connected users and their drawing data
